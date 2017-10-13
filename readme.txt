@@ -16,13 +16,14 @@ Save Custom Post Type UI (CPT UI) content types to a file so they can be added t
 
 When you update or save a custom post type or taxonomy in CPT UI, the export code will be automatically dumped into your theme in the `cptui` folder.
 
-All you have to do is include those files (`cptui/post_types.php` and `cptui/taxonomies.php`) in your theme and all your post types and taxonomies will work in your different environments without having to install CPT UI on live or staging.
+All you have to do is include those files (`cptui/post_types.php` and `cptui/taxonomies.php`) in your theme using the code below and all your post types and taxonomies will work in your different environments without having to install CPT UI on live or staging.
 
+In functions.php, add:
 `
-// only load if cptui not intialised
-if(!function_exists('cptui_init')) {
-    require 'cptui/post_types.php';
-    require 'cptui/taxonomies.php';
+// only load if Custom Post Type UI plugin is not intialised
+if( !function_exists( 'cptui_init' ) ) {
+    include 'cptui/post_types.php';
+    include 'cptui/taxonomies.php';
 }
 `
 
