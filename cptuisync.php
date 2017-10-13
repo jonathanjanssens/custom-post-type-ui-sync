@@ -65,7 +65,7 @@ function cptuisync_taxonomy_path() {
  * @return string
  */
 function cptuisync_directory() {
-    $defaultDir = get_template_directory() . '/cptui';
+    $defaultDir = get_stylesheet_directory() . '/cptui';
     if(!is_dir($defaultDir)) {
         mkdir($defaultDir, null, true);
     }
